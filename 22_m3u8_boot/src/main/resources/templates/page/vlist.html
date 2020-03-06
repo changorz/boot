@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en"   xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>上课视频</title>
+
+    <style>
+        body{
+            margin:0px;
+            background: url(/img/vlist.jpg) no-repeat;
+            background-size:100% 100%;
+            background-attachment:fixed;
+        }
+
+
+        header{
+            width: 100%;
+            text-align: center;
+        }
+
+        .main{
+            width: 90%;
+            margin: 20px auto;
+
+        }
+
+        table{
+            margin: 5% auto;
+            background-color: rgba(200, 255, 247, 0.51);
+            box-shadow: 10px 10px 5px #888888;
+            padding: 20px;
+            border-radius:10px;
+        }
+
+        th{
+            width: 250px;
+        }
+
+        td{
+            height: 50px;
+            vertical-align:middle;
+        }
+
+
+    </style>
+
+</head>
+<body>
+    <div>
+        <header>
+            <h1>停课不停学！</h1>
+        </header>
+        <div class="main">
+            <h3>直播视频：</h3>
+            <div>
+                <table>
+                    <tr>
+                        <th>日期</th>
+                        <th>视频</th>
+                        <th>资料</th>
+                    </tr>
+
+
+
+                    <tr th:each="v : ${videos}">
+                        <td th:text="${v.update}"></td>
+                        <td>
+                             <a th:href="@{'/playvideo/'+${v.id}}" th:text="${v.vname}"></a>
+                        </td>
+                        <td>
+                            <a th:href="@{${v.resources_name}}" th:text="${v.resources_url}"></a>
+                        </td>
+                    </tr>
+
+
+
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

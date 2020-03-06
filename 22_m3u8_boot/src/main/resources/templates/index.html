@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>无情的回放机器v1.0</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <style>
+
+        body{
+            margin:0px;
+            background: url(img/vlist.jpg) no-repeat;
+            background-size:100% 100%;
+            background-attachment:fixed;
+        }
+
+        .main{
+            width: 80%;
+            margin: 20px auto;
+        }
+
+        .main > div {
+            width: 250px;
+            height: 380px;
+            float: left;
+            margin: 2% 3%;
+            padding-bottom: 1px;
+            overflow:hidden;
+            box-shadow: 10px 10px 5px rgba(134, 122, 136, 0.59);
+            border-radius:5px;
+            background-color: rgba(255, 192, 212, 0.38);
+        }
+        
+        .main > div > div {
+            padding: 5%;
+            overflow:hidden;
+        }
+
+        .main > div > div > label{
+            height: 55px;
+            font-family: 黑体;
+        }
+
+        .main > div > div > p{
+            height: 112px;
+            font-family: 仿宋;
+            overflow:hidden;
+            color: rgba(255, 73, 48, 0.82);
+        }
+
+        .main > div > div > a{
+            height: 55px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="head">
+    <h1 style="text-align: center">Hello World</h1>
+</div>
+
+<div class="main">
+
+    <div th:each="course : ${c_list}">
+        <img th:src="@{${course.img_url}}"  width="100%" height="158px"/>
+        <div>
+            <label th:text="${course.courseName}"></label>
+            <p th:text="${course.intro}"></p>
+            <a href="#">mooc(开发中)</a>
+            <a href="#">作业(开发中)</a>
+            <a th:href="@{'/vlist/'+${course.id}}">视频</a>
+        </div>
+    </div>
+
+
+</div>
+</body>
+</html>
