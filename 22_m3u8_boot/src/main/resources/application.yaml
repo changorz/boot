@@ -7,8 +7,8 @@ spring:
     #\u6570\u636E\u6E90\u57FA\u672C\u914D\u7F6E
     type: com.alibaba.druid.pool.DruidDataSource
     url: jdbc:mysql://106.13.168.109:3306/course?useSSL=true&useUnicode=true&characterEncoding=utf8&serverTimezone=UTC
-    username: root
-    password: dcw@1234567890
+    username: aaabbb
+    password: bbbbbb
     #\u6570\u636E\u6E90\u5176\u4ED6\u914D\u7F6E
     initialSize: 5
     minIdle: 5
