@@ -43,6 +43,6 @@ public class MyWebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.inMemoryAuthentication()
-                .withUser("chang").password(new BCryptPasswordEncoder().encode("dcw@1234567890")).roles("admin");
+                .withUser("chang").password(new BCryptPasswordEncoder().encode("passsword")).roles("admin");
     }
 }
